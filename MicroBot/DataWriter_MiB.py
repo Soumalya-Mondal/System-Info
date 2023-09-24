@@ -72,7 +72,7 @@ if __name__ == '__main__':
     debug = DataWriter()
 
     # Printing all function output to check
-    print('# ' + '-'*8 + ' Data Write Into File Info ' + '-'*8 + ' #')
+    print('# ' + '-'*8 + ' Data Write Into File Information ' + '-'*8 + ' #')
     # End line print
     print('# ' + '-'*48 + ' #')
 # ------------------------------------------------ #
