@@ -5,7 +5,7 @@
 # Callable Function -->
 
 # Create allocation for user define module
-__all__ = ['TimeInfo_Mib']
+__all__ = ['TimeInfo_MiB']
 
 # Import class from user define class
 from TimeInfo_MiB import TimeInfo
