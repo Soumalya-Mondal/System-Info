@@ -4,7 +4,7 @@
 # Developer --> Soumalya Mondal
 # Prerequisite --> datetime (Python-inBuild)
 # File Location --> ~/System-Info/MicroBot/NameGenerator_MiB.py
-# Callable Function --> 
+# Callable Function --> foldername(), filename()
 # ------------------------------------------------ #
 
 # ---------------- Impoting Module ---------------- #
