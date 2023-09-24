@@ -1,8 +1,11 @@
+# ---------------- About ---------------- #
+# Name --> TimeInfo_MiB.py
 # Description --> This module create various time information
 # Developer --> Soumalya Mondal
-# Prerequisite --> datetime (Python-inbuild)
+# Prerequisite --> datetime (Python-inBuild)
 # File Location --> ~/System-Info/MicroBot/TimeInfo_MiB.py
 # Callable Function --> date(), time12h(), time24h()
+# ------------------------------------------------ #
 
 # ---------------- Impoting Module ---------------- #
 # Importing datetime module
@@ -41,7 +44,6 @@ if __name__ == '__main__':
 
     # Printing all function output to check
     print('# ' + '-'*8 + ' System Current Date & Time Information ' + '-'*8 + ' #')
-
     # Print today's date
     print(f'\tCurret Date: {debug.date()}')
     # Print current time(12H)
