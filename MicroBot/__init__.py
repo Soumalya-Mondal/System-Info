@@ -8,4 +8,4 @@
 __all__ = ['TimeInfo_MiB']
 
 # Import class from user define class
-from TimeInfo_MiB import TimeInfo
+from .TimeInfo_MiB import TimeInfo
