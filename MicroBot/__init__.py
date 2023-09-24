@@ -4,8 +4,11 @@
 # File Location --> ~/System-Info/MicroBot/__init__.py
 # Callable Function -->
 
-# Create allocation for user define module
+# ------------ Create Allocation For User Define Modules ---------------- #
 __all__ = ['TimeInfo_MiB']
+# ------------------------------------------------ #
 
-# Import class from user define class
+# ---------------- Import Class From User Define Modules ---------------- #
+# Importing TimeInfo class from TimeInfo_MiB
 from .TimeInfo_MiB import TimeInfo
+# ------------------------------------------------ #
