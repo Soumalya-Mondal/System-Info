@@ -5,10 +5,5 @@
 # Callable Function -->
 
 # ------------ Create Allocation For User Define Modules ---------------- #
-__all__ = ['TimeInfo_MiB']
-# ------------------------------------------------ #
-
-# ---------------- Import Class From User Define Modules ---------------- #
-# Importing TimeInfo class from TimeInfo_MiB
-from .TimeInfo_MiB import TimeInfo
+__all__ = ['TimeInfo_MiB', 'DataWriter_MiB', 'NameGenerator_MiB']
 # ------------------------------------------------ #
