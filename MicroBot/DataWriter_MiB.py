@@ -5,86 +5,111 @@
 # Prerequisite --> NameGenerator (Dev-Build), os (Python-inBuild)
 # File Location --> ~/System-Info/MicroBot/DataWriter_MiB.py
 # Callable Function --> 
-# ------------------------------------------------ #
+# ---------------------------------------------------------------- #
 
-# ---------------- Impoting Module ---------------- #
-# Importing os module
-from os import mkdir, getcwd, rmdir
-from os.path import exists, join, dirname
-# Importing NameGenerator_MiB module
-from MicroBot.NameGenerator_MiB import NameGenerator
-# ------------------------------------------------ #
 
-# ---------------- Define Module Class ---------------- #
-class DataWriter:
 
-    # Initilize the class
-    def __init__(self, data):
-        self.data = data
-        # Create NameGenerator object
-        self.namegenerator = NameGenerator()
-        # Make DataFolder path
-        self.datafolderdir = join(getcwd(), 'DataFolder')
-        # Check if DataFolder is exists or not
-        if not exists(self.datafolderdir):
-            # Create DataFolder directory
-            mkdir(self.datafolderdir)
-            # Call createfolder function to create folder
-            self.createfolder()
-        else:
-            # Call createfolder function to create folder
-            self.createfolder()
-    
-    # To create folder
-    def createfolder(self):
-        # Get folder name
-        self.foldername = self.namegenerator.foldername()
-        # Make folder directory
-        self.folderdir = join(self.datafolderdir, self.foldername)
-        # Check if the directory is present or not
-        if not exists(self.folderdir):
-            # Create sub directory if not present
-            mkdir(self.folderdir)
-            # Call filecreate function to create file
-            self.filecreate()
-        else:
-            # Call filecreate function to create file
-            self.filecreate()
-    
-    # To create file
-    def filecreate(self):
-        # Get file name
-        self.filename = self.namegenerator.filename() + '.txt'
-        # Make file directory
-        self.filedir = join(self.folderdir, self.filename)
-        # Call writer function to write data into file
-        self.writer()
-    
-    # To write data into file
-    def writer(self):
-        # Create file
-        with open(self.filedir, 'w') as writer:
-            # Extract data from data dict
-            for x, y in self.data.items():
-                # Write into file
-                writer.write(f'{x}: {y}\n')
-        # Call return print function
-        self.__repr__()
-    
-    # To return Success statement
-    def __repr__(self):
-        return f'Folder Path:{self.folderdir}\nFile Path:{self.filedir}'
-# ------------------------------------------------ #
-
-# ---------------- Debug Section ---------------- #
-# Calling main function
+# ---------------- Self Module Call Section ---------------- #
 if __name__ == '__main__':
+    # ---------------- Impoting Module ---------------- #
+    from os import mkdir, getcwd
+    from os.path import exists, join, dirname
+    from NameGenerator_MiB import NameGenerator
 
-    # Define TimeInfo class object
-    debug = DataWriter()
+    # ---------------- Define Class ---------------- #
+    class DataWriter:
+        # Initilize the class
+        def __init__(self, data):
+            self.data = data
+            self.namegenerator = NameGenerator()
+            self.datafolderdir = join(dirname(getcwd()), 'DataFolder')
+            if not exists(self.datafolderdir):
+                mkdir(self.datafolderdir)
+                self.createfolder()
+            else:
+                self.createfolder()
+        
+        # To create folder
+        def createfolder(self):
+            self.foldername = self.namegenerator.foldername()
+            self.folderdir = join(self.datafolderdir, self.foldername)
+            if not exists(self.folderdir):
+                mkdir(self.folderdir)
+                self.filecreate()
+            else:
+                self.filecreate()
+        
+        # To create file
+        def filecreate(self):
+            self.filename = self.namegenerator.filename() + '.txt'
+            self.filedir = join(self.folderdir, self.filename)
+            self.writer()
+        
+        # To write data into file
+        def writer(self):
+            with open(self.filedir, 'w') as writer:
+                for x, y in self.data.items():
+                    writer.write(f'{x}: {y}\n')
+            self.__repr__()
+        
+        # Return statement
+        def __repr__(self):
+            return f'Folder Name:{self.foldername}\nFolder Path:{self.folderdir}\nFile Name:{self.filename}\nFile Path:{self.filedir}'
 
-    # Printing all function output to check
-    print('# ' + '-'*8 + ' Data Write Into File Information ' + '-'*8 + ' #')
-    # End line print
-    print('# ' + '-'*48 + ' #')
-# ------------------------------------------------ #
+    # ---------------- Debug Section ---------------- #
+    sampledata = {'Developer':'Soumalya Mondal', 'Call By': 'DataWriter_MiB.py'}
+    debug = DataWriter(data = sampledata)
+    print('\n# ' + '-'*8 + ' Data Write Into File Information ' + '-'*8 + ' #\n')
+    print(debug)
+    print('\n# ' + '-'*48 + ' #\n')
+# ---------------------------------------------------------------- #
+
+
+
+# ---------------- Other Module Call Section ---------------- #
+else:
+    # ---------------- Impoting Module ---------------- #
+    from os import mkdir, getcwd
+    from os.path import exists, join
+    from MicroBot.NameGenerator_MiB import NameGenerator
+
+    # ---------------- Define Class ---------------- #
+    class DataWriter:
+        # Initialize class
+        def __init__(self, data):
+            self.data = data
+            self.namegenerator = NameGenerator()
+            self.datafolderdir = join(getcwd(), 'DataFolder')
+            if not exists(self.datafolderdir):
+                mkdir(self.datafolderdir)
+                self.createfolder()
+            else:
+                self.createfolder()
+        
+        # To create folder
+        def createfolder(self):
+            self.foldername = self.namegenerator.foldername()
+            self.folderdir = join(self.datafolderdir, self.foldername)
+            if not exists(self.folderdir):
+                mkdir(self.folderdir)
+                self.filecreate()
+            else:
+                self.filecreate()
+        
+        # To create file
+        def filecreate(self):
+            self.filename = self.namegenerator.filename() + '.txt'
+            self.filedir = join(self.folderdir, self.filename)
+            self.writer()
+        
+        # To write data into file
+        def writer(self):
+            with open(self.filedir, 'w') as writer:
+                for x, y in self.data.items():
+                    writer.write(f'{x}: {y}\n')
+            self.__repr__()
+        
+        # Return statement
+        def __repr__(self):
+            return f'Folder Name:{self.foldername}\nFolder Path:{self.folderdir}\nFile Name:{self.filename}\nFile Path:{self.filedir}'
+# ---------------------------------------------------------------- #
