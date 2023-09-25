@@ -29,8 +29,8 @@ if __name__ == '__main__':
         def filename(self):
             filename = self.dtNow.strftime('%Hh-%Mm-%Ss-%fms')
             return filename
-
-    # Create NameGenerator object
+        
+    # ---------------- Debug Section ---------------- #
     debug = NameGenerator()
     print('\n# ' + '-'*8 + ' Folder & File Name Generator ' + '-'*8 + ' #\n')
     print(f'Folder Name: {debug.foldername()}')

@@ -35,8 +35,8 @@ if __name__ == '__main__':
         def time24h(self):
             time = self.dtNow.strftime('%H:%M:%S.%f')
             return time
-
-    # Define TimeInfo class object
+        
+    # ---------------- Debug Section ---------------- #
     debug = TimeInfo()
     print('\n# ' + '-'*8 + ' System Current Date & Time Information ' + '-'*8 + ' #\n')
     print(f'Curret Date: {debug.date()}')
