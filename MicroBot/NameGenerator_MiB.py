@@ -7,42 +7,57 @@
 # Callable Function --> foldername(), filename()
 # ------------------------------------------------ #
 
-# ---------------- Impoting Module ---------------- #
-# Importing datetime module
-from datetime import datetime as dt
-# ------------------------------------------------ #
 
-# ---------------- Define Module Class ---------------- #
-class NameGenerator:
-    
-    # Initilize the class
-    def __init__(self):
-        self.dtNow = dt.now()
 
-    # Create folder name function
-    def foldername(self):
-        foldername = self.dtNow.strftime('%d-%B-%Y')
-        return foldername
-    
-    # Create file name function
-    def filename(self):
-        filename = self.dtNow.strftime('%Hh-%Mm-%Ss-%fms')
-        return filename
-# ------------------------------------------------ #
-
-# ---------------- Debug Section ---------------- #
-# Calling main function
+# ---------------- Self Module Call Section ---------------- #
 if __name__ == '__main__':
+    # ---------------- Impoting Module ---------------- #
+    from datetime import datetime as dt
 
-    # Define NameGenerator class object
+    # ---------------- Define Class ---------------- #
+    class NameGenerator:    
+        # Initilize the class
+        def __init__(self):
+            self.dtNow = dt.now()
+
+        # Create folder name function
+        def foldername(self):
+            foldername = self.dtNow.strftime('%d-%B-%Y')
+            return foldername
+        
+        # Create file name function
+        def filename(self):
+            filename = self.dtNow.strftime('%Hh-%Mm-%Ss-%fms')
+            return filename
+
+    # Create NameGenerator object
     debug = NameGenerator()
+    print('\n# ' + '-'*8 + ' Folder & File Name Generator ' + '-'*8 + ' #\n')
+    print(f'Folder Name: {debug.foldername()}')
+    print(f'File Name: {debug.filename()}.txt')
+    print('\n# ' + '-'*48 + ' #\n')
+# ---------------------------------------------------------------- #
 
-    # Printing all function output to check
-    print('# ' + '-'*8 + ' Folder & File Name Generator ' + '-'*8 + ' #')
-    # Print folder name
-    print(f'\tFolder Name: {debug.foldername()}')
-    # Print file name
-    print(f'\tFile Name: {debug.filename()}')
-    # End line print
-    print('# ' + '-'*48 + ' #')
-# ------------------------------------------------ #
+
+
+# ---------------- Other Module Call Section ---------------- #
+else:
+    # ---------------- Impoting Module ---------------- #
+    from datetime import datetime as dt
+
+    # ---------------- Define Class ---------------- #
+    class NameGenerator:    
+        # Initilize the class
+        def __init__(self):
+            self.dtNow = dt.now()
+
+        # Create folder name function
+        def foldername(self):
+            foldername = self.dtNow.strftime('%d-%B-%Y')
+            return foldername
+        
+        # Create file name function
+        def filename(self):
+            filename = self.dtNow.strftime('%Hh-%Mm-%Ss-%fms')
+            return filename
+# ---------------------------------------------------------------- #
