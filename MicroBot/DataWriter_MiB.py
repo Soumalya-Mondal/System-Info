@@ -12,18 +12,19 @@
 from os import mkdir, getcwd, rmdir
 from os.path import exists, join, dirname
 # Importing NameGenerator_MiB module
-from NameGenerator_MiB import NameGenerator
+from MicroBot.NameGenerator_MiB import NameGenerator
 # ------------------------------------------------ #
 
 # ---------------- Define Module Class ---------------- #
 class DataWriter:
 
     # Initilize the class
-    def __init__(self):
+    def __init__(self, data):
+        self.data = data
         # Create NameGenerator object
         self.namegenerator = NameGenerator()
         # Make DataFolder path
-        self.datafolderdir = join(dirname(getcwd()), 'DataFolder')
+        self.datafolderdir = join(getcwd(), 'DataFolder')
         # Check if DataFolder is exists or not
         if not exists(self.datafolderdir):
             # Create DataFolder directory
@@ -61,7 +62,18 @@ class DataWriter:
     
     # To write data into file
     def writer(self):
-        pass
+        # Create file
+        with open(self.filedir, 'w') as writer:
+            # Extract data from data dict
+            for x, y in self.data.items():
+                # Write into file
+                writer.write(f'{x}: {y}\n')
+        # Call return print function
+        self.__repr__()
+    
+    # To return Success statement
+    def __repr__(self):
+        return f'Folder Path:{self.folderdir}\nFile Path:{self.filedir}'
 # ------------------------------------------------ #
 
 # ---------------- Debug Section ---------------- #
